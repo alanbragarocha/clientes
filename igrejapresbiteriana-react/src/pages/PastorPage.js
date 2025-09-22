@@ -299,15 +299,16 @@ const PastorPage = () => {
       <section className="pastor-cta">
         <div className="container">
           <div className="cta-content">
-            <h2>Venha Conhecer Nossa Igreja</h2>
-            <p>
-              Faça parte desta família de fé e cresça espiritualmente conosco sob a liderança pastoral
-              do Rev. Marcelo Carnaval.
+            <h2 className="cta-title">Venha Conhecer Nossa Igreja</h2>
+            <p className="cta-description">
+              Faça parte desta família de fé e cresça espiritualmente
             </p>
-              <a href="/#contato" className="btn btn-secondary">
+            <div className="cta-actions">
+              <a href="/#contato" className="btn btn-secondary btn-lg">
                 <i className="fas fa-map-marker-alt"></i>
                 Nossa Localização
               </a>
+            </div>
           </div>
         </div>
       </section>
