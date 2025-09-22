@@ -1,0 +1,29 @@
+/* Estilos específicos para esconder as classes automáticas do Material UI */
+
+/* Removendo as classes padrão do Material UI */
+.mui-accordion .MuiAccordionSummary-content,
+.mui-accordion .MuiAccordionSummary-contentGutters,
+.mui-accordion .css-yfrx4k-MuiAccordionSummary-content {
+  all: initial !important;
+  display: flex !important;
+  align-items: center !important;
+  margin: 12px 0 !important;
+  width: 100% !important;
+}
+
+/* Customização adicional para garantir que nossos estilos sejam aplicados */
+.mui-accordion-summary .ministerio-icon,
+.mui-accordion-summary .area-icon {
+  margin-right: 12px !important;
+  z-index: 5 !important;
+}
+
+.mui-accordion-summary .accordion-title {
+  flex-grow: 1 !important;
+  margin-left: 12px !important;
+}
+
+/* Garantindo que o ícone de expansão apareça corretamente */
+.mui-accordion .MuiAccordionSummary-expandIconWrapper {
+  z-index: 5 !important;
+}

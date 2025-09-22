@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MinisterioSection.css';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const MinisterioSection = () => {
+  const [expanded, setExpanded] = useState('panel0');  // Começamos com o primeiro item aberto (índice 0)
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
   const areasAtuacao = [
+
+    {
+      icon: 'fas fa-globe-americas',
+      title: 'Nossa Visão Missionária',
+      defaultOpen: true,
+      description: 'A Quarta IPM é uma pequena igreja, mas sempre pretendeu, desde seu início, ser uma igreja missionária. Este valor está expresso em nossa Declaração de Propósitos.',
+      details: [
+        'Com a graça de Deus, temos feito missões durante quase vinte anos através de parcerias, apoiando aqueles que se dispõe a ir aonde nós não conseguimos.',
+        'Nossa história de parcerias missionárias é longa: já apoiamos a família de Mazinho e Ana (Atibaia-SP), com seus 45 filhos adotivos; construímos salas de EBD em uma Igreja Batista (Itatiaia-RJ); ajudamos o projeto ATINI, que resgata crianças indígenas que correm risco de vida (Brasília-DF).',
+        'Apoiamos o casam missionário Jeferson e Fabiana do Ministério Palavra da Vida no Vale do Jequitinhonha (MG); por mais de 15 anos apoiamos a implantação do Ministério Palavra da Vida em Moçambique, através dos missionários Eneas e Bibiana; participamos da parceria, junto ao Presbitério de Macaé, na implantação da IPB Barramares.',
+        'Recentemente firmamos parceria com o Projeto Revitaliza França, com Rev. Renato Prates e Juliana, para a revitalização da Igreja Reformada em Marseille, na França.',
+        'Nossas parcerias mais recentes são o apoio ao seminarista Cleison Daut, que tem atuado como importante auxílio na Quarta IPM, bem como a jurisdição assumida sobre a Congregação de Conceição e Macabu, num trabalho conjunto para a revitalização e o fortalecimento daquela igreja.'
+      ]
+    },
+
     {
       icon: 'fas fa-pray',
       title: 'Aconselhamento',
@@ -22,16 +48,7 @@ const MinisterioSection = () => {
         '3. Nos cultos vespertinos. Como nossa igreja é uma Igreja Reformada, nossos cultos são cristocêntricos e bibliocêntricos, ou seja, a Bíblia sempre é a fonte de nossas mensagens.'
       ]
     },
-    {
-      icon: 'fas fa-hands-helping',
-      title: 'Ação Social',
-      description: 'Projetos e iniciativas voltadas ao serviço comunitário e apoio aos mais vulneráveis, colocando em prática os valores de amor e solidariedade cristã.'
-    },
-    {
-      icon: 'fas fa-users',
-      title: 'Formação de Líderes',
-      description: 'Mentoria e capacitação para o desenvolvimento de novos líderes, preparando-os para multiplicar o impacto positivo na comunidade de fé e na sociedade.'
-    }
+
   ];
 
   return (
@@ -44,61 +61,49 @@ const MinisterioSection = () => {
         </p>
 
         <div className="ministerio-container">
-          {/* Visão e Missão */}
-          <div className="ministerio-visao">
-            <div className="ministerio-header">
-              <div className="ministerio-icon">
-                <i className="fas fa-church" aria-hidden="true"></i>
-              </div>
-              <h3>Visão e Missão</h3>
-            </div>
-            <p>
-              A Quarta Igreja Presbiteriana de Macaé é uma igreja com propósitos. Entendemos
-              que nem nós, nem nossa igreja, estamos aqui por acaso. Deus nos criou e
-              estabeleceu com propósitos bem definidos, e desejamos cumprir a expectativa do Senhor no
-              tempo que temos aqui, até que Ele volte. Foi para isso que ele nos chamou.
-            </p>
-            <p>
-              Para isso precisamos saber e entender claramente que propósitos são esses, para
-              que possamos obedecê-los e sermos encontrados fiéis. Por isso, baseados na
-              Bíblia, elaboramos uma Declaração de Propósitos, para servir de direcionador de
-              nossas ações e nos ajudar em nossa caminhada.
-            </p>
-            <p>
-              Declaração de Propósitos da Quarta IPM:
-            </p>
-            <ol>
-              <li>Desejamos, de todo coração, honrar e exaltar a Deus em nossos encontros, formais e informais. (Adoração)</li>
-              <li>Queremos conhecer os novos irmãos na fé, acolhê-los, batizá-los e integrá-los, bem como suas famílias, à nossa família espiritual. (Comunhão)</li>
-              <li>Pela oração, o estudo e a prática das Escrituras; e pela operação do Espírito Santo em nós, desejamos nos tornar mais e mais parecidos com o Senhor Jesus Cristo, em nosso caráter, para a glória de Deus. (Discipulado)</li>
-              <li>Como Igreja, desejamos servir uns aos outros, para alívio das cargas e das necessidades espirituais, emocionais, físicas e materiais. (Serviço ou Ministério)</li>
-              <li>Nos comprometemos a investir nossos dons, talentos e recursos financeiros na promoção e proclamação do evangelho, na igreja e fora dela, através de nosso testemunho, palavras e ações; em Macaé ou em qualquer outro lugar em que Deus nos der oportunidade. (Evangelização e Missões)</li>
-            </ol>
-          </div>
+
 
           {/* Áreas de Atuação */}
-          <div className="ministerio-atuacao">
-            <div className="ministerio-areas">
-              {areasAtuacao.map((area, index) => (
-                <article key={index} className="area-item">
-                  <div className="area-icon">
-                    <i className={area.icon} aria-hidden="true"></i>
-                  </div>
-                  <h4>{area.title}</h4>
-                  <div className="area-content">
-                    <p>{area.description}</p>
-                    {area.details && (
-                      <ul className="area-details">
-                        {area.details.map((detail, idx) => (
-                          <li key={idx}>{detail}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
+          {areasAtuacao.map((area, index) => (
+            <Accordion
+              key={index}
+              expanded={expanded === `panel${index}` || (area.defaultOpen && expanded === false)}
+              onChange={handleChange(`panel${index}`)}
+              className="mui-accordion"
+              defaultExpanded={area.defaultOpen}
+            >
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls={`panel${index}bh-content`}
+                id={`panel${index}bh-header`}
+                className="mui-accordion-summary"
+              >
+                <div className="area-icon">
+                  <i className={area.icon} style={{color: 'white'}} aria-hidden="true"></i>
+                </div>
+                <Typography component="h4" className="accordion-title">
+                  {area.title}
+                </Typography>
+              </AccordionSummary>
+
+              <AccordionDetails>
+                <div className="area-content">
+                  <Typography component="p" className="area-description">
+                    {area.description}
+                  </Typography>
+                  {area.details && (
+                    <ul className="area-details">
+                      {area.details.map((detail, idx) => (
+                        <li key={idx}>
+                          <Typography component="span">{detail}</Typography>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </AccordionDetails>
+            </Accordion>
+          ))}
         </div>
       </div>
     </section>
