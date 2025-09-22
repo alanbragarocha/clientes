@@ -1,0 +1,529 @@
+/* ============================================
+   ESCALAS.CSS - SISTEMA DE ESTILO SUSTENTÁVEL
+   Quarta Igreja Presbiteriana de Macaé
+   ============================================ */
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* --------------------------------------
+   1. TIPOGRAFIA
+   -------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* --------------------------------------
+   2. CONTÊINERES E UTILITÁRIOS
+   -------------------------------------- */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-sm);
+}
+
+.section-title {
+    text-align: center;
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* --------------------------------------
+   3. CONTEÚDO PRINCIPAL
+   -------------------------------------- */
+.main-content {
+    padding: var(--space-xxl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1.5" fill="%23e94e1b" opacity="0.1"/></svg>');
+    background-size: 60px 60px;
+    z-index: -1;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    animation: fadeIn 1s ease;
+}
+
+.page-header h1 {
+    color: var(--primary-color);
+    margin-bottom: var(--space-sm);
+    position: relative;
+    display: inline-block;
+    padding-bottom: var(--space-sm);
+}
+
+.page-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gradient-bg);
+}
+
+.page-description {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* --------------------------------------
+   4. GRID DE ESCALAS E CARDS
+   -------------------------------------- */
+.escalas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2.5rem;
+    margin-top: var(--space-xl);
+}
+
+.escala-card {
+    background-color: var(--light-text);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 5px solid var(--primary-color);
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 0.8s ease;
+}
+
+.escala-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Variação de cores para cards */
+.escala-card:nth-child(2) {
+    border-top-color: var(--secondary-color);
+}
+
+.escala-card:nth-child(3) {
+    border-top-color: var(--accent-color);
+}
+
+.escala-card:nth-child(4) {
+    border-top-color: var(--vibrant-yellow);
+}
+
+.escala-card:nth-child(5) {
+    border-top-color: var(--vibrant-teal);
+}
+
+.escala-card:nth-child(6) {
+    border-top-color: var(--vibrant-red);
+}
+
+/* Cabeçalho do card */
+.escala-header {
+    background: var(--gray-bg);
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.escala-title {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.escala-card:nth-child(2) .escala-title {
+    color: var(--secondary-color);
+}
+
+.escala-card:nth-child(3) .escala-title {
+    color: var(--accent-color);
+}
+
+.escala-card:nth-child(4) .escala-title {
+    color: var(--vibrant-yellow);
+}
+
+.escala-card:nth-child(5) .escala-title {
+    color: var(--vibrant-teal);
+}
+
+.escala-card:nth-child(6) .escala-title {
+    color: var(--vibrant-red);
+}
+
+.escala-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Conteúdo do card */
+.escala-content {
+    padding: 1.5rem;
+}
+
+.escala-lista {
+    list-style: none;
+}
+
+.escala-item {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.escala-item:last-child {
+    border-bottom: none;
+}
+
+.escala-item:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+    padding-left: 8px;
+}
+
+.escala-data {
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+}
+
+.escala-card:nth-child(2) .escala-data {
+    color: var(--secondary-color);
+}
+
+.escala-card:nth-child(3) .escala-data {
+    color: var(--accent-color);
+}
+
+.escala-card:nth-child(4) .escala-data {
+    color: var(--vibrant-yellow);
+}
+
+.escala-card:nth-child(5) .escala-data {
+    color: var(--vibrant-teal);
+}
+
+.escala-card:nth-child(6) .escala-data {
+    color: var(--vibrant-red);
+}
+
+.escala-pessoa {
+    display: block;
+    font-size: 0.95rem;
+    margin-left: 10px;
+    border-left: 2px solid var(--gray-bg);
+    padding-left: 10px;
+    color: #555;
+}
+
+/* --------------------------------------
+   5. RODAPÉ
+   -------------------------------------- */
+footer {
+    background: var(--dark-bg);
+    color: var(--light-text);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 0 0;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ffffff" opacity="0.03"/></svg>');
+    background-size: 40px 40px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h4 {
+    color: var(--accent-color);
+    margin-bottom: var(--space-sm);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.footer-logo h3 {
+    color: var(--light-text);
+    font-size: 1.4rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-contact p,
+.footer-horarios p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: var(--space-sm) 0;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* --------------------------------------
+   6. ANIMAÇÕES
+   -------------------------------------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --------------------------------------
+   7. RESPONSIVIDADE
+   -------------------------------------- */
+/* Tablets e desktops menores */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets e dispositivos móveis */
+@media (max-width: 768px) {
+    /* Navegação mobile */
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--light-bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    /* Overlay para quando o menu está aberto */
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        pointer-events: none;
+    }
+    
+    body.menu-open::after {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Ajuste no grid de escalas */
+    .escalas-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Footer responsivo */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-section {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-section h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+}
+
+/* Dispositivos móveis pequenos */
+@media (max-width: 480px) {
+    :root {
+        --space-xxl: 3rem;
+        --space-xl: 2.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.7rem;
+    }
+    
+    .section-description {
+        padding: 0 var(--space-sm);
+    }
+    
+    .escala-card {
+        margin: 0 var(--space-sm);
+    }
+}

@@ -1,0 +1,229 @@
+/* Ministério Section Styles */
+.ministerio {
+  padding: var(--space-xxl) 0;
+  background: #D3D3D3;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.2rem;
+  color: var(--gray);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.ministerio-container {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--space-xxl);
+  align-items: start;
+}
+
+/* Visão e Missão */
+.ministerio-visao {
+  background: var(--light-bg);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius-lg);
+  border-left: 5px solid var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+.ministerio-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.ministerio-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-text);
+  font-size: 1.5rem;
+}
+
+.ministerio-visao h3 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
+.ministerio-visao p {
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: var(--space-md);
+}
+
+/* Áreas de Atuação */
+.ministerio-atuacao {
+  display: flex;
+  flex-direction: column;
+}
+
+.ministerio-areas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.area-item {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border-top: 3px solid var(--color-accent);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.area-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.area-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-text);
+  font-size: 1.3rem;
+  margin-bottom: var(--space-md);
+}
+
+.area-item h4 {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+  font-family: "Playfair Display", serif;
+}
+
+.area-item p {
+  color: var(--gray);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.area-content {
+  margin-top: 1rem;
+}
+
+.area-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Estilos para os detalhes dos ministérios */
+.area-details {
+  margin-top: var(--space-md);
+  padding-left: var(--space-md);
+}
+
+.area-details li {
+  margin-bottom: var(--space-sm);
+  list-style-type: disc;
+  line-height: 1.5;
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .ministerio {
+    padding: var(--space-lg) 0;
+  }
+
+  .ministerio-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .ministerio-areas {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .area-item {
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .area-details {
+    padding-left: var(--space-sm);
+  }
+
+  .ministerio-visao {
+    padding: var(--space-lg);
+  }
+
+  .ministerio-header {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+
+  .ministerio-visao h3 {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .ministerio {
+    padding: var(--space-md) 0;
+  }
+
+  .ministerio-visao {
+    padding: var(--space-md);
+  }
+
+  .area-item {
+    padding: var(--space-md);
+  }
+
+  .ministerio-icon,
+  .area-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .ministerio-visao h3 {
+    font-size: 1.3rem;
+  }
+
+  .area-item h4 {
+    font-size: 1.1rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .area-details {
+    padding-left: var(--space-xs);
+  }
+
+  .area-details li {
+    margin-bottom: var(--space-xs);
+    font-size: 0.9rem;
+  }
+}

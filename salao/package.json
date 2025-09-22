@@ -1,0 +1,38 @@
+{
+  "name": "salao-suellen-marcelino",
+  "version": "1.0.0",
+  "description": "Landing page moderna e responsiva para o Salão de Beleza Suellen Marcelino",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "salao",
+    "beleza",
+    "landing-page",
+    "responsive",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Desenvolvido para Suellen Marcelino",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "local"
+  },
+  "homepage": ".",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

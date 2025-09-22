@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://salaosuellenmarcelino.com.br/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

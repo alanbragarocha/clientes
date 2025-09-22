@@ -1,0 +1,1307 @@
+/* --------------------------------------
+   1. VARIÁVEIS E CORES GLOBAIS
+   -------------------------------------- */
+:root {
+  /* Cores principais */
+  --primary-color: #e94e1b; /* Laranja vibrante */
+  --secondary-color: #9c27b0; /* Roxo intenso */
+  --accent-color: #8bc34a; /* Verde lima */
+
+  /* Cores derivadas */
+  --primary-light: #f47249;
+  --primary-dark: #c73d0e;
+  --secondary-light: #b04fc0;
+  --secondary-dark: #7b1fa2;
+  --accent-light: #a2cf6e;
+  --accent-dark: #71a436;
+
+  /* Cores neutras */
+  --text-color: #333;
+  --light-text: #fff;
+  --dark-bg: #2d2d2d;
+  --light-bg: #f5f3ee; /* Fundo creme claro */
+  --gray-bg: #e6e1d6; /* Fundo bege */
+  --white: #ffffff;
+  --gray: #777777;
+  --dark-light: #555555;
+
+  /* Cores vibrantes adicionais */
+  --vibrant-yellow: #ffc107;
+  --vibrant-red: #f44336;
+  --vibrant-teal: #009688;
+
+  /* Gradientes */
+  --gradient-bg: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  --gradient-header: linear-gradient(120deg, var(--light-bg) 0%, var(--gray-bg) 100%);
+
+  /* Transições */
+  --transition: all 0.3s ease;
+
+  /* Espaçamentos */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+  --space-huge: 8rem;
+
+  /* Bordas e sombras */
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* --------------------------------------
+   2. ESTILOS BASE
+   -------------------------------------- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* --------------------------------------
+   2. TIPOGRAFIA
+   -------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------
+   3. CONTÊINERES E UTILITÁRIOS
+   -------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+.section-title {
+  text-align: center;
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--accent-color);
+}
+
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* --------------------------------------
+   4. COMPONENTES DE BOTÕES
+   -------------------------------------- */
+.btn-primary,
+.btn-secondary,
+.btn-tertiary {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+  background-color: #228B22; /* Verde floresta médio para todos os botões */
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  color: var(--light-text);
+  border-color: #000;
+  background-color: #228B22; /* Verde floresta médio para garantir visibilidade */
+}
+
+.btn-primary:hover {
+  /* background: transparent; */
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: #228B22; /* Verde floresta médio */
+  color: white;
+}
+
+.btn-secondary:hover {
+  /* background: transparent; */
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.btn-nav {
+  background-color: #228B22; /* Verde floresta médio */
+  color: white;
+  border: none;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.8rem 1.8rem;
+  text-transform: uppercase;
+}
+
+.btn-nav:hover {
+  /* background: transparent; */
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------
+
+   5. SEÇÃO HERO
+   -------------------------------------- */
+.hero {
+  padding: var(--space-xxl) 0;
+  background: var(--gradient-header);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1.5" fill="%23e94e1b" opacity="0.1"/></svg>');
+  background-size: 60px 60px;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transform: rotate(1deg);
+  border: 5px solid var(--light-text);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+/* --------------------------------------
+   6. SEÇÃO PASTOR
+   -------------------------------------- */
+.pastor-section {
+  padding: var(--space-huge) 0;
+  background-color: var(--light-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.pastor-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23e94e1b" opacity="0.05"/></svg>');
+  background-size: 40px 40px;
+  z-index: 0;
+}
+
+.pastor-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.pastor-imagem {
+  flex: 0 0 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pastor-foto-oval {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border: 8px solid var(--primary-color);
+  transition: transform 0.4s ease;
+}
+
+.pastor-foto-oval:hover {
+  transform: scale(1.05);
+}
+
+.pastor-foto-oval img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pastor-conteudo {
+  flex: 1;
+}
+
+.pastor-info h3 {
+  color: var(--dark-bg);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.pastor-cargo {
+  color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.pastor-acoes {
+  margin-top: var(--space-lg);
+}
+
+
+
+/* --------------------------------------
+   7. SEÇÃO REFORMA
+   -------------------------------------- */
+.reforma-section {
+  padding: var(--space-huge) 0;
+  background-color: var(--light-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.reforma-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0,0 0,10 10,0" fill="%238bc34a" opacity="0.15"/></svg>');
+  background-size: 20px 20px;
+  z-index: 0;
+}
+
+.reforma-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.card {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border-bottom: 4px solid var(--primary-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-12px) rotate(1deg);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content p {
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.card-content a {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Cores específicas para cards */
+.reforma-section .card:nth-child(1) {
+  border-bottom: 4px solid var(--primary-color);
+}
+
+.reforma-section .card:nth-child(2) {
+  border-bottom: 4px solid var(--secondary-color);
+}
+
+.reforma-section .card:nth-child(3) {
+  border-bottom: 4px solid var(--accent-color);
+}
+
+.reforma-section .card:nth-child(1) .card-content h3 {
+  color: var(--primary-color);
+  border-bottom: 2px dashed var(--primary-color);
+  padding-bottom: 0.5rem;
+}
+
+.reforma-section .card:nth-child(2) .card-content h3 {
+  color: var(--secondary-color);
+  border-bottom: 2px dashed var(--secondary-color);
+  padding-bottom: 0.5rem;
+}
+
+.reforma-section .card:nth-child(3) .card-content h3 {
+  color: var(--accent-color);
+  border-bottom: 2px dashed var(--accent-color);
+  padding-bottom: 0.5rem;
+}
+
+/* --------------------------------------
+   8. SEÇÃO AGENDA
+   -------------------------------------- */
+.agenda-section {
+  padding: var(--space-huge) 0;
+  background-color: var(--light-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.agenda-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1.5" fill="%23e94e1b" opacity="0.1"/></svg>');
+  background-size: 50px 50px;
+  z-index: 0;
+}
+
+.agenda-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------
+   9. SEÇÃO MINISTÉRIO
+   -------------------------------------- */
+.ministerio {
+  background: linear-gradient(to bottom, var(--light-bg) 0%, var(--white) 100%);
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-huge) 0;
+}
+
+.ministerio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(67, 97, 238, 0.05) 0%,
+    rgba(67, 97, 238, 0) 70%
+  );
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.ministerio-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xxl);
+  position: relative;
+  z-index: 1;
+}
+
+/* Visão e Missão */
+.ministerio-visao {
+  flex: 1 1 400px;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ministerio-visao:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.ministerio-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.ministerio-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-light),
+    var(--primary-color)
+  );
+  color: var(--white);
+  font-size: 1.5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ministerio-header h3 {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.ministerio-visao p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--dark-light);
+  margin-bottom: 1rem;
+}
+
+/* Áreas de Atuação */
+.ministerio-atuacao {
+  flex: 1 1 500px;
+}
+
+.ministerio-areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.area-item {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 1.8rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.area-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.area-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.area-item:hover::before {
+  opacity: 1;
+}
+
+.area-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-light),
+    var(--primary-color)
+  );
+  color: var(--white);
+  font-size: 1.2rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.area-item h4 {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.8rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.area-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--dark-light);
+}
+
+.eventos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.evento {
+  display: flex;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  border-left: 3px solid var(--primary-color);
+}
+
+.evento:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Todos os eventos com a mesma cor */
+
+.evento-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-dark)
+  );
+  color: var(--white);
+  padding: 1.5rem 1rem;
+}
+
+.evento-data .dia {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.evento-data .horario {
+  font-size: 1rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.evento-info {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.evento-info h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color: var(--primary-dark);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+}
+
+.evento-info h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.evento:hover .evento-info h4::after {
+  width: 100%;
+}
+
+.evento-info p {
+  font-size: 0.95rem;
+  color: var(--dark-light);
+  margin-bottom: 0.7rem;
+}
+
+.evento-local {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+
+/* --------------------------------------
+   10. SEÇÃO MAPA/LOCALIZAÇÃO
+   -------------------------------------- */
+.map-section {
+  padding: var(--space-huge) 0;
+  background-color: var(--light-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.map-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%239c27b0" opacity="0.1"/></svg>');
+  background-size: 30px 30px;
+}
+
+.map-wrapper {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 4px solid var(--accent-color);
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-lg);
+}
+
+.address-info {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------
+   11. SEÇÃO DÍZIMOS E OFERTAS
+   -------------------------------------- */
+.dizimos-ofertas {
+  padding: var(--space-huge) 0;
+  background-color: var(--light-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.dizimos-ofertas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M40,40 L60,40 L60,60 L40,60 Z" fill="%23e94e1b" opacity="0.05"/></svg>');
+  background-size: 40px 40px;
+  z-index: 0;
+}
+
+.dizimos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.dizimo-metodo {
+  flex: 1;
+  max-width: 450px;
+  background-color: var(--light-text);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+  border-top: 4px solid var(--primary-color);
+}
+
+.dizimo-metodo:nth-child(2) {
+  border-top: 4px solid var(--secondary-color);
+}
+
+.dizimo-metodo:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.dizimo-metodo h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+  display: inline-block;
+}
+
+.dizimo-metodo:nth-child(2) h3 {
+  color: var(--secondary-color);
+}
+
+.dizimo-metodo h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+.dizimo-metodo:nth-child(2) h3::after {
+  background: var(--secondary-color);
+}
+
+.dados-bancarios {
+  background-color: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  text-align: left;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.dados-bancarios p {
+  margin: 0.7rem 0;
+  font-size: 1rem;
+}
+
+.qrcode-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.qrcode {
+  background-color: #f8f8f8;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.qrcode img {
+  width: 100%;
+  height: auto;
+}
+
+.pix-info {
+  margin-top: 1.5rem;
+}
+
+.pix-info p {
+  margin: 0.7rem 0;
+}
+
+/* --------------------------------------
+   12. RODAPÉ
+   -------------------------------------- */
+footer {
+  background: var(--dark-bg);
+  color: var(--light-text);
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0 0;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ffffff" opacity="0.03"/></svg>');
+  background-size: 40px 40px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section h4 {
+  color: var(--accent-color);
+  margin-bottom: var(--space-sm);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-section h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-logo h3 {
+  color: var(--light-text);
+  font-size: 1.4rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-logo h3::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-color);
+}
+
+.footer-contact p,
+.footer-horarios p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-projeto {
+  margin-top: 1.5rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light-text);
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.social-icons i {
+  font-size: 1.2rem;
+}
+
+.copyright {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: var(--space-sm) 0;
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+/* --------------------------------------
+   13. ANIMAÇÕES
+   -------------------------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------
+   14. RESPONSIVIDADE
+   -------------------------------------- */
+/* Tablets e desktops menores */
+@media (max-width: 992px) {
+  /* Hero section */
+  .hero-container {
+    flex-direction: column;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-image {
+    margin-top: var(--space-lg);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Pastor section */
+  .pastor-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pastor-imagem {
+    margin-bottom: var(--space-lg);
+  }
+
+  .pastor-conteudo {
+    max-width: 700px;
+  }
+
+  .pastor-credenciais {
+    text-align: left;
+  }
+
+  /* Dízimos section */
+  .dizimos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dizimo-metodo {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Ministério */
+  .ministerio-container {
+    flex-direction: column;
+  }
+}
+
+/* Tablets e dispositivos móveis */
+@media (max-width: 768px) {
+  /* Navegação móvel */
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: var(--light-bg);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  /* Overlay para quando o menu está aberto */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    pointer-events: none;
+  }
+
+  body.menu-open::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Cards grid */
+  .card-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-section {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-section h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-logo h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Section descriptions */
+  .section-description {
+    padding: 0 var(--space-sm);
+  }
+
+  /* Eventos cards */
+  .evento-card {
+    flex-direction: column;
+    max-width: 350px;
+    margin: 0 auto;
+    border-left: none;
+    border-top: 5px solid var(--primary-color);
+  }
+
+  .evento-card:nth-child(2) {
+    border-top: 5px solid var(--secondary-color);
+    border-left: none;
+  }
+
+  .evento-card:nth-child(3) {
+    border-top: 5px solid var(--accent-color);
+    border-left: none;
+  }
+
+  .evento-card:nth-child(4) {
+    border-top: 5px solid var(--vibrant-yellow);
+    border-left: none;
+  }
+
+  .evento-data {
+    width: 100%;
+    padding: var(--space-sm);
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .evento-dia {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+
+  /* Eventos slider */
+  .eventos-slider {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .evento-card:hover {
+    transform: translateY(-10px);
+  }
+
+  /* Ministério */
+  .evento {
+    flex-direction: column;
+  }
+
+  .evento-data {
+    width: 100%;
+    padding: var(--space-sm);
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .evento-data .dia {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+
+  .ministerio-areas {
+    grid-template-columns: 1fr;
+  }
+
+  .eventos-container {
+    width: 90%;
+  }
+
+  /* Meta info */
+  .evento-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Dispositivos móveis pequenos */
+@media (max-width: 480px) {
+  /* Tipografia */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+
+  /* Pastor foto */
+  .pastor-foto-oval {
+    width: 250px;
+    height: 250px;
+  }
+
+  .pastor-info h3 {
+    font-size: 1.7rem;
+  }
+
+  /* Evento info */
+  .evento-info h3 {
+    font-size: 1.2rem;
+  }
+}

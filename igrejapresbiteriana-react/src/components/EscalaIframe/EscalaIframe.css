@@ -1,0 +1,201 @@
+.escala-iframe-container {
+  width: 100%;
+  margin: 0 auto 3rem;
+  padding: 0;
+  position: relative;
+  max-width: 1200px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.escala-iframe {
+  width: 100%;
+  height: 85vh; /* Altura maior para mostrar mais conteúdo */
+  min-height: 500px; /* Altura mínima garantida */
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.escala-iframe.loading {
+  opacity: 0.3;
+  filter: blur(2px); /* Efeito sutil de desfoque durante carregamento */
+}
+
+.iframe-loading {
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 20px 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 80%;
+  max-width: 300px;
+}
+
+.iframe-loading p {
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: #444;
+  font-size: 1.1em;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #1e3a8a; /* Cor da igreja (azul escuro) */
+  border-radius: 50%;
+  animation: spin 1.2s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.iframe-error {
+  background-color: #fff8f8;
+  border: 1px solid #ffcccc;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.1);
+}
+
+.iframe-error p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.iframe-error p:first-of-type {
+  font-weight: 600;
+  color: #d32f2f;
+  font-size: 1.3rem;
+}
+
+.iframe-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.iframe-error .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background-color: #1e3a8a; /* Cor da igreja (azul escuro) */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.iframe-error .btn:hover {
+  background-color: #152960;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.iframe-error .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos adicionais para melhor visual */
+.escala-iframe-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #1e3a8a 0%, #4d67a9 50%, #1e3a8a 100%);
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+  .escala-iframe {
+    height: 80vh;
+  }
+
+  .iframe-actions {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .escala-iframe {
+    height: 75vh;
+  }
+
+  .iframe-error {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .escala-iframe-container {
+    margin-bottom: 2rem;
+  }
+
+  .iframe-actions {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .escala-iframe {
+    height: 70vh;
+    min-height: 400px;
+  }
+
+  .iframe-loading {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .iframe-error {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .iframe-error p {
+    font-size: 1rem;
+  }
+
+  .iframe-error .btn {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .iframe-actions {
+    max-width: 100%;
+  }
+}

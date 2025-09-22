@@ -1,0 +1,68 @@
+/* Reforma Section Styles */
+.reforma-section {
+  padding: var(--space-xxl) 0;
+  background: #D3D3D3;
+}
+
+.section-title {
+  text-align: center;
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--accent-color);
+}
+
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .reforma-section {
+    padding: var(--space-lg) 0;
+  }
+
+  .section-title {
+    margin-bottom: var(--space-lg);
+    font-size: 1.8rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+    margin-bottom: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .reforma-section {
+    padding: var(--space-md) 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+  }
+}

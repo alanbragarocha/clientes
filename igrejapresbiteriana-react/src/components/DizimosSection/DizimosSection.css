@@ -1,0 +1,238 @@
+/* Dízimos e Ofertas Section Styles */
+.dizimos-ofertas {
+  padding: var(--space-xxl) 0;
+  background: #D3D3D3;
+}
+
+.dizimos-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.congregacao-section {
+  background: #D3D3D3;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow);
+  padding: var(--space-xl);
+  border-top: 4px solid var(--primary-color);
+}
+
+.congregacao-title {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--gray-bg);
+}
+
+.dizimos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.dizimo-metodo {
+  background: var(--gray-bg);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: var(--transition);
+}
+
+.dizimo-metodo:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.dizimo-metodo h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  font-family: "Playfair Display", serif;
+}
+
+.dados-bancarios p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--gray-bg);
+  margin-bottom: var(--space-sm);
+}
+
+.dados-bancarios strong {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.dados-bancarios span {
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* PIX Container */
+.pix-container {
+  border-top-color: var(--accent-color);
+}
+
+.qrcode-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.qr-placeholder {
+  width: 150px;
+  height: 150px;
+  background: var(--gray-bg);
+  border: 2px dashed var(--gray);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray);
+}
+
+.qr-placeholder i {
+  font-size: 3rem;
+  margin-bottom: var(--space-sm);
+}
+
+.qr-placeholder p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.qr-image {
+  width: 150px;
+  height: 150px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
+
+.pix-info {
+  text-align: center;
+}
+
+.pix-info p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--gray-bg);
+  margin-bottom: var(--space-sm);
+}
+
+.pix-info strong {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.pix-info span {
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.copy-button {
+  margin-top: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.copy-button:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .dizimos-ofertas {
+    padding: var(--space-lg) 0;
+  }
+
+  .dizimos-container {
+    gap: var(--space-lg);
+  }
+
+  .dizimos-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .congregacao-section {
+    padding: var(--space-lg);
+  }
+
+  .congregacao-title {
+    font-size: 1.5rem;
+  }
+
+  .dizimo-metodo {
+    padding: var(--space-lg);
+  }
+
+  .dados-bancarios p,
+  .pix-info p {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-xs);
+  }
+
+  .qr-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+
+  .qr-placeholder i {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dizimos-ofertas {
+    padding: var(--space-md) 0;
+  }
+
+  .dizimo-metodo {
+    padding: var(--space-md);
+  }
+
+  .dizimo-metodo h3 {
+    font-size: 1.3rem;
+  }
+
+  .qr-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .qr-placeholder i {
+    font-size: 2rem;
+  }
+
+  .qr-placeholder p {
+    font-size: 0.8rem;
+  }
+}

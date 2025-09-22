@@ -1,0 +1,424 @@
+/* ============================================
+   CALVINPAGE.CSS - ESTILO PARA PÁGINA DE CALVINO
+   Igreja Presbiteriana de Macaé
+   ============================================ */
+
+/* --------------------------------------
+   1. HERO BANNER
+   -------------------------------------- */
+.hero-banner {
+    background: var(--gradient-bg);
+    padding: 10rem 2rem 5rem;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 50px 50px, rgba(233, 78, 27, 0.1) 2px, transparent 2px);
+    background-size: 40px 40px;
+    z-index: 1;
+}
+
+.hero-banner h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: var(--space-sm);
+    position: relative;
+    z-index: 2;
+    font-family: "Playfair Display", serif;
+}
+
+.hero-banner .subtitle {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* --------------------------------------
+   2. SEÇÕES DE CONTEÚDO
+   -------------------------------------- */
+.content-section {
+    padding: var(--space-xxl) 0;
+    position: relative;
+}
+
+.alt-bg {
+    background-color: var(--gray-bg);
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: var(--space-xl);
+    position: relative;
+    padding-bottom: var(--space-sm);
+    color: var(--primary-color);
+    font-family: "Playfair Display", serif;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-bg);
+    border-radius: 9999px;
+}
+
+/* --------------------------------------
+   3. GRID DE CONTEÚDO
+   -------------------------------------- */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.content-grid.reverse {
+    direction: rtl;
+}
+
+.content-grid.reverse > * {
+    direction: ltr;
+}
+
+.content-image img {
+    width: 100%;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.content-image img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+.content-text h2 {
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+    color: var(--primary-color);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    padding-bottom: var(--space-sm);
+    font-family: "Playfair Display", serif;
+}
+
+.content-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-bg);
+    border-radius: 9999px;
+}
+
+.content-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+    color: var(--text-color);
+}
+
+/* --------------------------------------
+   4. TIMELINE / LINHA DO TEMPO
+   -------------------------------------- */
+.timeline-section {
+    padding: var(--space-xxl) 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 24px;
+    width: 4px;
+    background: var(--gradient-bg);
+    border-radius: 9999px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: var(--space-xl);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    box-shadow: var(--shadow);
+    z-index: 1;
+}
+
+.timeline-content {
+    background-color: var(--white);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: var(--space-xs);
+    font-family: "Playfair Display", serif;
+}
+
+.timeline-date {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    display: block;
+}
+
+/* --------------------------------------
+   5. CARDS GRID
+   -------------------------------------- */
+.cards-section {
+    padding: var(--space-xxl) 0;
+    background-color: var(--white);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.card {
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 4px solid var(--primary-color);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: var(--space-lg);
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--space-xs);
+    font-family: "Playfair Display", serif;
+}
+
+.card-date {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    display: block;
+}
+
+.card-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --------------------------------------
+   6. SEÇÃO BIOGRAFIA
+   -------------------------------------- */
+.biografia-section {
+    padding: var(--space-xxl) 0;
+}
+
+/* --------------------------------------
+   7. VALORES / BADGES
+   -------------------------------------- */
+.valores-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: var(--space-lg) 0;
+}
+
+.valor-badge {
+    background-color: var(--white);
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.valor-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.valor-badge i {
+    color: var(--accent-color);
+}
+
+.valor-badge span {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* --------------------------------------
+   8. BOTÕES
+   -------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-bg);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    min-height: 44px;
+    text-align: center;
+    margin-top: var(--space-lg);
+}
+
+.btn:hover,
+.btn:focus {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    color: var(--white);
+}
+
+/* --------------------------------------
+   9. RESPONSIVIDADE
+   -------------------------------------- */
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 8rem 1rem 4rem;
+    }
+
+    .content-section {
+        padding: var(--space-xl) 0;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .timeline {
+        padding: 0 var(--space-md);
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+    }
+
+    .timeline-marker {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .valores-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-marker {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .valor-badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}

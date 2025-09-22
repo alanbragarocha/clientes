@@ -1,0 +1,121 @@
+/* ============================================
+   RESPONSIVE STYLES - Quarta Igreja Presbiteriana de Macaé
+   ============================================ */
+
+/* Media Queries para garantir responsividade em diferentes dispositivos */
+
+/* Dispositivos pequenos (celulares em modo retrato, menos de 576px) */
+@media (max-width: 575.98px) {
+  .container {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  /* Ajustes específicos para o Header */
+  .nav-links {
+    padding: 1rem;
+  }
+
+  /* Ajustes para o Hero */
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin-top: var(--space-md);
+    order: 2;
+  }
+
+  /* Ajustes para seção do Pastor */
+  .pastor-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* Ajustes para cards */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajustes para mapa */
+  .map-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map-tab {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  /* Ajustes para seção de dízimos */
+  .dizimos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajustes para o footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* Dispositivos médios (celulares em modo paisagem e tablets, 576px até 991px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  /* Ajustes para Hero e Pastor em telas médias */
+  .hero-container,
+  .pastor-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Ajustes para cards */
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Ajustes para o footer */
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+}
+
+/* Dispositivos grandes (desktops, 992px ou mais) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Aqui podem entrar ajustes específicos para telas grandes */
+}
+
+/* Estilos de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

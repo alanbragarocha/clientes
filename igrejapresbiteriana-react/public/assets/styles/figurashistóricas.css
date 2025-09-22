@@ -1,0 +1,711 @@
+/* ============================================
+   FIGURASHISTORICAS.CSS - SISTEMA DE ESTILO SUSTENTÁVEL
+   Quarta Igreja Presbiteriana de Macaé
+   ============================================ */
+
+
+/* --------------------------------------
+   1. ESTILOS BASE
+   -------------------------------------- */
+   html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background: var(--light-bg);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* --------------------------------------
+   2. TIPOGRAFIA
+   -------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* --------------------------------------
+   3. CONTÊINERES E LAYOUTS BASE
+   -------------------------------------- */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-sm);
+}
+
+.content-section {
+    padding: var(--space-xl) 0;
+    position: relative;
+}
+
+.alt-bg {
+    background-color: var(--gray-bg);
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    padding-bottom: var(--space-sm);
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-bg);
+    border-radius: 9999px;
+}
+
+/* --------------------------------------
+   4. COMPONENTES DE BOTÕES
+   -------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-bg);
+    color: var(--light-text);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    min-height: 44px;
+    text-align: center;
+}
+
+.btn:hover, 
+.btn:focus {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    color: var(--light-text);
+}
+
+.btn-footer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--light-text);
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+    margin-top: var(--space-sm);
+    min-height: 44px;
+    text-align: center;
+}
+
+.btn-footer:hover,
+.btn-footer:focus {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    color: var(--light-text);
+}
+
+/* --------------------------------------
+   5. HERO BANNER
+   -------------------------------------- */
+.hero-banner {
+    background: var(--gradient-bg);
+    padding: 10rem 2rem 5rem;
+    text-align: center;
+    color: var(--light-text);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/pattern.svg');
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.hero-banner h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: var(--space-sm);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-banner .subtitle {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* --------------------------------------
+   6. GRID DE CONTEÚDO
+   -------------------------------------- */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.content-grid.reverse {
+    direction: rtl;
+}
+
+.content-grid.reverse > * {
+    direction: ltr;
+}
+
+.content-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.content-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.content-text h2 {
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+    color: var(--primary-color);
+    margin-bottom: var(--space-md);
+    position: relative;
+    padding-bottom: var(--space-sm);
+}
+
+.content-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-bg);
+    border-radius: 9999px;
+}
+
+.content-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* --------------------------------------
+   7. TIMELINE / LINHA DO TEMPO
+   -------------------------------------- */
+.timeline-section {
+    padding: var(--space-xl) 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 24px;
+    width: 4px;
+    background: var(--gradient-bg);
+    border-radius: 9999px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: var(--space-lg);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+    font-size: 1.5rem;
+    box-shadow: var(--shadow);
+    z-index: 1;
+}
+
+.timeline-content {
+    background-color: var(--light-text);
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: var(--space-xs);
+}
+
+.timeline-date {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    display: block;
+}
+
+/* --------------------------------------
+   8. CARDS GRID
+   -------------------------------------- */
+.cards-section {
+    padding: var(--space-xl) 0;
+    background-color: var(--light-text);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+}
+
+.card {
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: var(--space-md);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--space-xs);
+}
+
+.card-date {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    display: block;
+}
+
+/* --------------------------------------
+   9. VALORES / BADGES
+   -------------------------------------- */
+.valores-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+}
+
+.valor-badge {
+    background-color: var(--light-text);
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.valor-badge i {
+    color: var(--accent-color);
+}
+
+.valor-badge span {
+    font-weight: 500;
+}
+
+/* --------------------------------------
+   10. RODAPÉ
+   -------------------------------------- */
+footer {
+    background: var(--dark-bg);
+    color: var(--light-text);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 0 0;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ffffff" opacity="0.03"/></svg>');
+    background-size: 40px 40px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Seções do rodapé */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h4 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* Logo do rodapé */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo h3 {
+    color: var(--light-text);
+    font-size: 1.4rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-logo h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Informações de contato e horários */
+.footer-contact p,
+.footer-horarios p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Projeto missionário */
+.footer-projeto {
+    margin-top: 1.5rem;
+}
+
+/* Ícones sociais */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.social-icons i {
+    font-size: 1.2rem;
+}
+
+/* Copyright */
+.copyright {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1rem 0;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* --------------------------------------
+   11. RESPONSIVIDADE
+   -------------------------------------- */
+
+/* Telas maiores e desktops */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 var(--space-md);
+    }
+}
+
+/* Tablets e desktops menores */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .content-image {
+        margin: 0 auto;
+        max-width: 600px;
+    }
+}
+
+/* Tablets e dispositivos móveis grandes */
+@media (max-width: 768px) {
+    /* Ativação do menu mobile */
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    /* Overlay para quando o menu está aberto */
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        pointer-events: none;
+    }
+    
+    body.menu-open::after {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Menu responsivo */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--light-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: var(--space-lg);
+        transition: 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Ajuste na timeline */
+    .timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+        padding-left: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .timeline-marker {
+        position: relative;
+        margin-bottom: var(--space-sm);
+    }
+    
+    /* Rodapé responsivo */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-section {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-section h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .footer-logo h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Ajuste nos valores */
+    .valores-container {
+        justify-content: center;
+    }
+}
+
+/* Dispositivos móveis */
+@media (max-width: 576px) {
+    :root {
+        --space-xl: 3rem;
+        --space-lg: 2rem;
+    }
+    
+    .hero-banner {
+        padding: 7rem 1rem 3rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .valor-badge {
+        width: 100%;
+        justify-content: center;
+    }
+}

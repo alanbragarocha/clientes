@@ -1,0 +1,433 @@
+/* Escalas Page Styles */
+.escalas-page {
+  padding-top: var(--space-lg);
+}
+
+/* Hero Section */
+.escalas-hero {
+  padding: var(--space-xxl) 0;
+  background: var(--gradient-header);
+  text-align: center;
+  color: var(--light-text);
+  position: relative;
+  overflow: hidden;
+}
+
+.escalas-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23e94e1b" opacity="0.1"/></svg>');
+  background-size: 40px 40px;
+  z-index: 1;
+}
+
+.escalas-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.escalas-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: var(--space-md);
+  font-family: "Playfair Display", serif;
+}
+
+.escalas-hero .subtitle {
+  font-size: 1.3rem;
+  opacity: 1;
+  color: var(--color-accent-light); /* Verde esmeralda mais claro */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Sombra de texto para melhor legibilidade */
+  font-weight: 500; /* Ligeiramente mais encorpado */
+}
+
+/* Escalas Content */
+.escalas-content {
+  padding: var(--space-xxl) 0;
+  background: var(--white);
+}
+
+/* Loading e Error States */
+.loading-escalas,
+.error-escalas {
+  text-align: center;
+  padding: var(--space-xxl);
+  color: var(--gray);
+}
+
+.loading-escalas i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: var(--space-md);
+}
+
+.error-escalas i {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: var(--space-md);
+}
+
+/* Escalas Online */
+.escalas-online {
+  margin-bottom: var(--space-xxl);
+}
+
+.escalas-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--light-bg);
+  border-radius: var(--border-radius-lg);
+}
+
+.escalas-header h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--space-sm);
+}
+
+.escalas-header p {
+  color: var(--gray);
+}
+
+/* Item de Escala Online */
+.escala-item-online {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--space-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  border-left: 4px solid var(--primary-color);
+}
+
+.escala-item-online:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow);
+}
+
+.escala-header-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* Estilo específico para data na escala online */
+.escala-item-online .escala-data {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 600;
+  color: var(--text-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius);
+  background: var(--gray-bg);
+}
+
+.escala-item-online .escala-data i {
+  color: var(--color-primary);
+}
+
+.escala-tipo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--light-bg);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+}
+
+.escala-tipo i {
+  color: var(--accent-color);
+}
+
+.escala-observacoes {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  padding: var(--space-sm);
+  background: var(--gray-bg);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.escala-observacoes i {
+  color: var(--primary-color);
+}
+
+.escalas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xxl);
+}
+
+/* Categoria de Escala */
+.escala-categoria {
+  background: var(--light-bg);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.categoria-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-primary);
+  color: var(--light-text);
+}
+
+.categoria-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.categoria-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.escala-lista {
+  padding: var(--space-md);
+}
+
+/* Item de Escala */
+.escala-item {
+  padding: var(--space-md);
+  background: var(--white);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow);
+}
+
+.escala-item:last-child {
+  margin-bottom: 0;
+}
+
+.escala-data,
+.escala-equipe {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.escala-equipe {
+  margin-bottom: 0;
+}
+
+.escala-data i {
+  color: var(--primary-color);
+  width: 16px;
+}
+
+.escala-equipe i {
+  color: var(--accent-color);
+  width: 16px;
+}
+
+.escala-data span {
+  font-weight: 600;
+}
+
+/* Informações adicionais */
+.escalas-info {
+  margin-bottom: var(--space-xxl);
+}
+
+.info-card {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--light-bg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.info-content h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--space-sm);
+}
+
+.info-content ul {
+  padding-left: var(--space-md);
+  list-style-type: square;
+}
+
+.info-content li {
+  margin-bottom: var(--space-xs);
+  color: var(--text-color);
+}
+
+/* Call to Action */
+.escalas-cta {
+  text-align: center;
+  padding: var(--space-xl);
+  background: var(--light-bg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.escalas-cta h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--space-sm);
+}
+
+.escalas-cta p {
+  margin-bottom: var(--space-md);
+  color: var(--text-color);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.cta-buttons a i {
+  margin-right: var(--space-sm);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .escalas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .escala-header-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .escala-tipo {
+    align-self: flex-start;
+  }
+
+  .info-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-md);
+  }
+
+  .info-content ul {
+    text-align: left;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .escalas-hero {
+    padding: var(--space-xl) 0;
+  }
+
+  .categoria-header {
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    text-align: center;
+  }
+
+  .escala-item,
+  .escala-item-online {
+    padding: var(--space-md);
+  }
+
+  .escala-data,
+  .escala-equipe,
+  .escala-observacoes {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .info-card {
+    padding: var(--space-md);
+  }
+}
+
+/* Filtros para escalas online */
+.escalas-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  justify-content: center;
+}
+
+.filtro-btn {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--light-bg);
+  border: 1px solid var(--gray);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.filtro-btn:hover {
+  background: var(--gray-bg);
+}
+
+.filtro-btn.active {
+  background: var(--primary-color);
+  color: var(--light-text);
+  border-color: var(--primary-color);
+}
+
+/* Para mostrar quando não há escalas */
+.sem-escalas {
+  padding: var(--space-xl);
+  text-align: center;
+  background: var(--light-bg);
+  border-radius: var(--border-radius);
+  color: var(--gray);
+  font-style: italic;
+}
+
+/* Adaptações responsivas adicionais */
+@media (max-width: 992px) {
+  .escalas-filtros {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 576px) {
+  .filtro-btn {
+    font-size: 0.9rem;
+    padding: var(--space-xs) var(--space-sm);
+  }
+}

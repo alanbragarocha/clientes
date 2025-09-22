@@ -1,0 +1,132 @@
+/* Map Section Styles */
+.map-section {
+  padding: var(--space-xxl) 0;
+  background-color: #D3D3D3;
+  position: relative;
+}
+
+.map-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--color-accent);
+}
+
+.maps-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.map-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.map-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.map-info {
+  padding: var(--space-md);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.map-info h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  font-size: 1.5rem;
+}
+
+.map-info p {
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+.map-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.map-iframe {
+  display: block;
+}
+
+.map-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--color-primary) 0%, transparent 100%);
+  opacity: 0;
+  transition: var(--transition);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.map-wrapper:hover::before {
+  opacity: 0.1;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 350px;
+  display: block;
+  transition: var(--transition);
+}
+
+.map-wrapper:hover iframe {
+  transform: scale(1.01);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .maps-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .map-card {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-section {
+    padding: var(--space-lg) 0;
+  }
+
+  .map-info h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-section {
+    padding: var(--space-md) 0;
+  }
+
+  .map-wrapper iframe {
+    height: 250px;
+  }
+
+  .map-info {
+    padding: var(--space-sm);
+  }
+}

@@ -1,0 +1,107 @@
+/* Próximos Eventos Styles */
+.proximos-eventos {
+  background-color: #D3D3D3;
+  padding: var(--space-xs) 0;
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.proximos-eventos::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="50" height="50" fill="%23ffffff" opacity="0.05"/></svg>');
+  background-size: 20px 20px;
+  z-index: 1;
+}
+
+.eventos-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  position: relative;
+  z-index: 2;
+  padding: var(--space-xs) 0;
+  flex-wrap: wrap;
+}
+
+.evento-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0 var(--space-md);
+}
+
+.evento-icone {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--space-xs);
+  transition: transform 0.3s ease;
+}
+
+.evento-item:hover .evento-icone {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.evento-icone i {
+  font-size: 1.1rem;
+  color: var(--color-accent);
+}
+
+.evento-item span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .eventos-slider {
+    flex-direction: row;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+  }
+
+  .evento-item {
+    padding: 0 var(--space-sm);
+  }
+}
+
+@media (max-width: 576px) {
+  .eventos-slider {
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-xs) 0;
+  }
+
+  .evento-item {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .evento-item {
+    font-size: 0.9rem;
+  }
+
+  .evento-icone {
+    width: 36px;
+    height: 36px;
+  }
+
+  .evento-icone i {
+    font-size: 0.9rem;
+  }
+}
