@@ -54,11 +54,8 @@ const MinisterioSection = () => {
   return (
     <section className="ministerio" id="ministerio">
       <div className="container">
-        <h2 className="section-title">Nossos Ministérios</h2>
-        <p className="section-subtitle">
-          Conheça nossa visão ministerial e as principais áreas de atuação que orientam
-          nosso trabalho e serviço à comunidade de fé.
-        </p>
+        <h2 className="section-title">Parcerias Missionárias</h2>
+        <p className="section-subtitle"></p>
 
         <div className="ministerio-container">
 
@@ -104,6 +101,42 @@ const MinisterioSection = () => {
               </AccordionDetails>
             </Accordion>
           ))}
+          {/* Accordion Parcerias Missionárias */}
+          <Accordion
+            expanded={expanded === 'panel-parcerias'}
+            onChange={handleChange('panel-parcerias')}
+            className="mui-accordion"
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel-parcerias-content"
+              id="panel-parcerias-header"
+              className="mui-accordion-summary"
+            >
+              <div className="area-icon">
+                <i className="fas fa-hands-helping" style={{color: 'white'}} aria-hidden="true"></i>
+              </div>
+              <Typography component="h4" className="accordion-title">
+                Parcerias Missionárias
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <div className="area-content">
+                <Typography component="p" className="area-description">
+                  A Quarta IPM é uma pequena igreja, mas sempre pretendeu, desde seu início, ser uma igreja missionária. Este valor está expresso em nossa Declaração de Propósitos:
+                </Typography>
+                <blockquote style={{margin: '1em 0', fontStyle: 'italic', color: '#228B22'}}>
+                  "Nos comprometemos a investir nossos dons, talentos e recursos financeiros na promoção e proclamação do evangelho, na igreja e fora dela, através de nosso testemunho, palavras e ações; em Macaé ou em qualquer outro lugar em que Deus nos der oportunidade. (Evangelização e Missões)".
+                </blockquote>
+                <Typography component="p" className="area-description">
+                  Com a graça de Deus, temos feito isso durante quase vinte anos. Fazemos missões através de parcerias, apoiando aqueles que se dispõe a ir aonde nós não conseguimos.<br/><br/>
+                  Nossa história de parcerias missionárias é longa e extremamente profícua: já apoiamos a família de Mazinho e Ana (Atibaia-SP), com seus 45 filhos adotivos; construímos salas de EBD em uma Igreja Batista (Itatiaia-RJ); ajudamos o projeto ATINI, que resgata crianças indígenas que correm risco de vida (Brasília-DF); apoiamos o casam missionário Jeferson e Fabiana do Ministério Palavra da Vida no Vale do Jequitinhonha (MG); por mais de 15 anos apoiamos a implantação do Ministério Palavra da Vida em Moçambique, através dos missionários Eneas e Bibiana; participamos da parceria, junto ao Presbitério de Macaé, na implantação da IPB Barramares.<br/><br/>
+                  Recentemente firmamos parceria com o Projeto Revitaliza França, com Rev. Renato Prates e Juliana, para a revitalização da Igreja Reformada em Marseille, na França.<br/><br/>
+                  Nossas parcerias mais recentes são o apoio ao seminarista Cleison Daut, que tem atuado como importante auxílio na Quarta IPM, bem como a jurisdição assumida sobre a Congregação de Conceição e Macabu, num trabalho conjunto para a revitalização e o fortalecimento daquela igreja.
+                </Typography>
+              </div>
+            </AccordionDetails>
+          </Accordion>
         </div>
       </div>
     </section>
